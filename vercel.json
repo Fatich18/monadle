@@ -1,3 +1,7 @@
 {
-  "version": 2
+  "version": 2,
+  "builds": [
+    { "src": "pages/api/frame.ts", "use": "@vercel/node" },
+    { "src": "pages/api/start.ts", "use": "@vercel/node" }
+  ]
 }
