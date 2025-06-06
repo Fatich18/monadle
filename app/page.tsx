@@ -1,0 +1,1 @@
+// Wordle main game UI (placeholder)

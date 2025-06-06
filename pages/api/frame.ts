@@ -1,0 +1,1 @@
+// Farcaster frame starter (placeholder)

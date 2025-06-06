@@ -1,0 +1,1 @@
+// Farcaster start handler (placeholder)

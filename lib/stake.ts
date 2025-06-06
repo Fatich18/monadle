@@ -1,0 +1,1 @@
+// Stake simulation logic (placeholder)
