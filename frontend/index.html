@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monadle Wordle</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Farcaster Frame SDK CDN -->
+  <script type="module">
+    import { sdk } from 'https://esm.sh/@farcaster/frame-sdk';
+    window.FrameSDK = sdk;
+  </script>
+</head>
+<body>
+  <div id="app">
+    <!-- 1. Ekran: Oyun Seçimi -->
+    <div id="choose-game-screen" class="screen">
+      <h2>Choose word length:</h2>
+      <div class="button-group" id="word-length-buttons"></div>
+      <h2>Choose number of guesses:</h2>
+      <div class="button-group" id="guess-count-buttons"></div>
+      <button id="start-game-button" class="primary-button" disabled>Start Game</button>
+    </div>
+
+    <!-- 2. Ekran: Tahmin -->
+    <div id="game-screen" class="screen hidden">
+      <h2 id="game-info"></h2>
+      <div id="guess-grid" class="grid"></div>
+      <div id="keyboard" class="keyboard"></div>
+      <button id="submit-guess-button" class="primary-button" disabled>Submit Guess</button>
+    </div>
+
+    <!-- 3. Ekran: Sonuç -->
+    <div id="result-screen" class="screen hidden">
+      <h2 id="result-message"></h2>
+      <div id="reveal-word" class="hidden">
+        <p>The word was: <span id="secret-word-display"></span></p>
+      </div>
+      <button id="share-result-button" class="primary-button">Share Result</button>
+      <button id="play-again-button" class="primary-button">Play Again Tomorrow</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
