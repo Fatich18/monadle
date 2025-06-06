@@ -1,18 +1,20 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const frameHtml = `
-    <html>
-      <head>
-        <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="https://i.imgur.com/I1E1g4V.png" />
-        <meta property="fc:frame:button:1" content="Start Game" />
-        <meta property="fc:frame:post_url" content="https://monadle.vercel.app/api/handle" />
-      </head>
-      <body></body>
-    </html>
-  `;
-
-  res.setHeader("Content-Type", "text/html");
-  res.status(200).send(frameHtml);
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  res.status(200).json({
+    og: {
+      title: 'Monad Wordle',
+      description: 'Stake to play and win MONAD!',
+      image: 'https://monadle-frame.vercel.app/og.png', // kendi görsel URL'inle değiştir
+    },
+    buttons: [
+      {
+        label: 'Start',
+        action: {
+          type: 'post',
+          url: 'https://monadle-frame.vercel.app/api/start', // kendi domain'inle değiştir
+        },
+      },
+    ],
+  });
 }
